@@ -1,0 +1,160 @@
+@import "site/variables";
+@import "site/deviceDetect";
+
+
+@import "site/fonts";
+@import "site/imagegrid";
+@import "site/layout";
+@import "site/logo";
+@import "site/menus";
+@import "site/index";
+@import "site/project";
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    cursor: se-resize;
+
+    line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+    
+    cursor: $pointer_svg, auto;
+    cursor: -webkit-image-set( $pointer_svg 1x, $pointer_svg 2x) 20 21, auto;
+}
+
+* {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+
+/* ---- body ---- */
+
+.light {
+    height: 100vh;
+    width: 100vW;
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    text-rendering: optimizeLegibility;
+    font-weight: lighter;
+    background-color: $light;
+    font-family: "Monosten-Light";
+    animation: colorchange 50s infinite;
+    -webkit-animation: colorchange 50s infinite;
+    #project-img_34-img3{
+        box-shadow: 0 0 123px 0 rgba(0,0,0,0);
+    }
+}
+
+.dark{
+    height: 100vh;
+    width: 100vW;
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    text-rendering: optimizeLegibility;
+    font-weight: lighter;
+    font-family: "Monosten-Light";
+    background-color: $blue;
+    #project-img_34-img3{
+        box-shadow: 0 0 123px 0 $blue;
+    }
+}
+
+
+@keyframes colorchange {
+    0% {
+        background: $light;
+    }
+    50% {
+        background: $light;
+    }
+    100% {
+        background: $light;
+    }
+}
+
+@-webkit-keyframes colorchange {
+    0% {
+        background: $light;
+    }
+    50% {
+        background: $light;
+    }
+    100% {
+        background: $light;
+    }
+}
+/* ---- ---- */
+
+/* ---- main ---- */
+
+.main {
+    position: relative;
+    /* for page-nav */
+}
+
+.main__page {}
+
+
+/* container
+------------------------- */
+
+.container {
+    margin-top: -310px;
+    padding-left: 0px;
+    padding-right: 0px;
+    max-width: 100vw;
+}
+
+.container--wide {
+    max-width: 100vw;
+}
+
+.container .duo.example {
+    max-width: none;
+}
+
+
+/* desktop */
+
+@media screen and ( min-width: 960px) {
+    .container {
+        width: 100vw;
+    }
+}
+
+/* Canvas control mouse
+------------------------- */
+
+#canvasContainer {
+    display: block;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 10000;
+    pointer-events: none;
+    mix-blend-mode: exclusion;
+
+    @media screen and (max-device-width: 420px) {
+        display: none;
+    }
+}
+
+/* Iphone tumbado
+------------------------- 
+
+@media only screen and (orientation: landscape) and (max-device-width: 420px) {}
+
+*/
+

@@ -1,0 +1,226 @@
+
+{{#if data.post.dark}}
+<script type="text/javascript">
+	$('body').addClass('dark_project');
+</script>
+{{else}}
+	<script type="text/javascript">
+	$('body').addClass('light_project');
+</script>
+{{/if}}
+
+<script>
+    AOS.init({
+    	duration:1000,
+    	easing: 'ease-in-out'
+    });
+    	$('#menu_bottom').hide();
+
+</script>
+<div id="project">
+	<!-- Foto y titulo -->
+		<div id="project-header">
+			{{#if data.post.heroVideo}}
+				<div id="project-header-featured_image" data-aos="fade-left" style="background-color: #FFC19C">
+					<iframe allow="autoplay;" src="https://player.vimeo.com/video/{{data.post.heroVideo}}?background=true" style="
+						position:absolute;
+						top:0;
+						left:-78vw;
+						width:200vw;
+						height:80vh;
+						transform: translate(0,0); 
+						overflow: hidden;
+						pointer-events: none;
+
+						" frameborder="0"></iframe>
+				</div>
+				{{else}}
+				<div id="project-header-featured_image" data-aos="fade-left" info ="{{data.post.heroImage.url}}">
+				</div>
+			{{/if}}
+
+		<div id="project-header-title" data-aos="fade-up" data-aos-delay="400">
+			<h1>{{{data.post.featrueText}}}<h1>
+		</div>
+	</div>
+	<!-- Tabla de datos -->
+	<div id="project-table">
+		<div id="project-table_AB">
+			<div class="project-table-data" id="project-table-client"  data-aos="fade-up" data-aos-delay="500">
+				<div class="project-table-label">
+					<p>Client</p>
+				</div>
+				<div class="project-table-info">
+					<p>{{data.post.client}}</p>
+				</div>
+			</div>
+			<div class="project-table-data" id="project-table-year"  data-aos="fade-up" data-aos-delay="600">
+				<div class="project-table-label">
+					<p>Year</p>
+				</div>
+				<div class="project-table-info">
+					<p>{{data.post.year}}</p>
+				</div>	
+			</div>
+		</div>
+		<div id="project-table_C">
+			<div class="project-table-data" id="project-table_tool"  data-aos="fade-up" data-aos-delay="700">
+				<div class="project-table-label">
+					<p>Tools</p>
+				</div>
+				<div class="project-table-info">
+					<p>
+					{{#each data.post.categories}}
+					{{name}} <
+					{{/each}}
+					<p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Texto primero -->
+
+	<div id="project-description-container">
+		<div id="project-description-intro" class="project-description-all_text" data-aos="fade-up">
+			<h6>{{{data.post.content.brief}}}</h6>
+		</div>
+		<div id="project-description-text" class="project-description-all_text" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1800">
+			<p>{{{data.post.content.extended}}}</p>
+		</div>
+	</div>
+
+	<!-- Imágnes 0 y 1 + texto en movimiento -->
+
+	<div id="project-img_01-container" >
+		<div id ="project-img_01-mooving-container" data-aos="fade" data-aos-delay="0" data-aos-duration="1200" >
+			<h5 id="project-img_01-mooving-text"><span>{{{data.post.content.loop}}}</span></h5>
+		</div>
+		<div id="project-img_01-img0_container" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1200">
+			<div id="project-img_01-img0" info ="{{data.post.image_00.url}}">
+
+			</div>
+			<div id="project-img_01-description">
+				<p class="project-img_description_text">{{{data.post.imageInfoOne}}}</p>
+			</div>
+		</div>
+		<div id="project-img_01-img1" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1200" info = "{{data.post.image_01.url}}">
+		</div>
+	</div>
+	<!-- Texto extra -->
+
+	<div id="project-extra_info-container" data-aos="fade-up" data-aos-delay="100">
+		<div id="project-extra_info-text_container">
+			<p>{{{data.post.content.addition}}}</p>
+		</div>
+	</div>
+
+	<!-- Imágen 2 -->
+
+	{{#if data.post.video_00}}
+	<div class="embed-container"><iframe src="https://player.vimeo.com/video/{{data.post.video_00}}?autoplay=0&color=FF9C9C&title=0&byline=0&portrait=0&autopause=1" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen data-aos="fade-up" data-aos-delay="100"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+	{{else}}	
+	<div id="project-img_2-container" data-aos="fade-up" data-aos-delay="100" info="{{data.post.image_02.url}}">
+	</div>
+
+	{{/if}}
+	<!-- Separador -->
+	<div id="project-spacer" data-aos="fade-up" data-aos-delay="0"></div>
+
+	<!-- Project colors -->
+
+	<div id="project-colors">
+		<div class ="project-colors-color_container" data-aos="fade-up" data-aos-delay="0">
+			<div class="project-colors-sample" style="background-color: {{data.post._01_HEX}}"></div>
+			<div class="project-colors-label">
+				<p>{{data.post._01_HEX}}</p>
+			</div>
+		</div>
+		<div class ="project-colors-color_container" data-aos="fade-up" data-aos-delay="150">
+			<div class="project-colors-sample" style="background-color: {{data.post._02_HEX}}"></div>
+			<div class="project-colors-label">
+				<p>{{data.post._02_HEX}}</p>
+			</div>
+		</div>
+		<div class ="project-colors-color_container" data-aos="fade-up" data-aos-delay="300">
+			<div class="project-colors-sample" style="background-color: {{data.post._03_HEX}}"></div>
+			<div class="project-colors-label">
+				<p>{{data.post._03_HEX}}</p>
+			</div>
+		</div>
+		<div class ="project-colors-color_container" data-aos="fade-up" data-aos-delay="450">
+			<div class="project-colors-sample" style="background-color: {{data.post._04_HEX}}"></div>
+			<div class="project-colors-label">
+				<p>{{data.post._04_HEX}}</p>
+			</div>
+		</div>
+		<div class ="project-colors-color_container" data-aos="fade-up" data-aos-delay="600">
+			<div class="project-colors-sample" style="background-color: {{data.post._05_HEX}}"></div>
+			<div class="project-colors-label">
+				<p>{{data.post._05_HEX}}</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Imágnes 3 y 4  -->
+
+	<div id="project-img_34-container">
+		<div id="project-img_34-img3" data-aos="fade-up" data-aos-delay="0" info = "{{data.post.image_03.url}}">
+		</div>
+		<div id="project-img_34-img4-container" data-aos="fade-up" data-aos-delay="600"	>
+			<div id="project-img_34-img4" info="{{data.post.image_04.url}}" class="project-img_full">
+			</div>
+			<div id="project-img_34-description">
+				<p class="project-img_description_text">
+					{{{data.post.imageInfoTwo}}}
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Imagen final -->
+
+	{{#if data.post.video_01}}
+	<div style="padding:41.67% 0 0 0;position:relative; width: 100vw;"id="project-img_5-container" >
+		<iframe allow="autoplay;" src="https://player.vimeo.com/video/{{data.post.video_01}}?autoplay=1&color=FF9C9C&title=0&byline=0&portrait=0&autopause=1&background=1" style="position:absolute;top:0;left:0;width:100%;height:100%; border-radius: 100px; overflow: hidden;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen data-aos="fade-up" data-aos-delay="100"></iframe>
+	</div>
+	<script src="https://player.vimeo.com/api/player.js"></script>
+
+	{{else}}	
+	<div id="project-img_5-container" data-aos="fade-up" data-aos-delay="0" info="{{data.post.image_05.url}}">
+	</div>
+	{{/if}}
+	<!-- Botones -->
+
+	<div id="project-botones-container">
+		<div class="project-botones-boton" data-aos="fade-up" data-aos-delay="0">
+			<a href="/">Proyectos</a>
+		</div>
+		<div class="project-botones-boton" data-aos="fade-up" data-aos-delay="100">
+			<a href="/">Contacto</a>
+		</div>
+	</div>
+
+	<!-- footer -->
+
+	<div id="project-footer-container" data-aos="fade-up" data-aos-delay="500">
+				<div id="project-footer-spacer" ></div>
+
+		<div id="project-footer-logo" class="footer-data">
+			<img src="https://res.cloudinary.com/instintosalvaje/image/upload/v1538599680/logo.png" style="width: 100%; height: 100%;">
+		</div>
+		<div id="project-footer-Text" class="footer-data">
+			<h6 class="project-footer-Text_hp">Tizell</h6>
+			<p class="project-footer-Text_hp">Design and<br> audiovisual studio</p>
+		</div>
+		<div id="project-footer-R" class="footer-data">
+			<h6>®</h6>
+		</div>
+	</div>
+</div>
+
+<script src="../../js/mousePlayground.js" id="sketchP5"></script>
+<div id="canvasContainer"></div>
+<script src="../../js/Sounds.js"></script>
+<script src="../../js/infinite-scroll-docs.min.js"></script>
+<script src="../../js/projectAnimations.js"></script>

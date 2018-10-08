@@ -1,0 +1,52 @@
+<script type="text/javascript">
+  $('body').addClass('light');
+  $('.menu').addClass('OFF_MENU');
+</script>
+
+    <div class="content">
+        <div class="logo-wrap">
+            <div id='logo'></div>
+            <div id='logoDevice'></div>
+        </div>
+    </div>
+
+<div class="grid are-images-unloaded">
+    <div class="grid__col-sizer"></div>
+    <div class="grid__gutter-sizer"></div>
+        {{#if galleries}}
+          {{#each galleries}}
+              {{#if heroImage}}
+              {{/if}}
+                   {{#each fotos.images}}
+                  <div class="grid__item  image-grid__item" id ="{{../fotos.linkTo}}">
+                    <img src="{{cloudinaryUrl }}" clas="img" alt="tizell" />
+                  </div>
+                  {{/each}}
+          {{/each}}
+        {{else}}
+          {{# each data.posts.results}}
+              {{#if heroImage}}
+                  <div class="grid__item  image-grid__item" id ={{postUrl slug}}>
+                    <img src="{{cloudinaryUrl heroImage}}" clas="img" alt="tizell" />
+                  </div>
+              {{/if}}
+          {{/each}}
+        {{/if}}
+</div>
+
+<div class="page-load-status">
+  <div class="loader-ellips infinite-scroll-request">
+    <span class="loader-ellips__dot"></span>
+    <span class="loader-ellips__dot"></span>
+    <span class="loader-ellips__dot"></span>
+    <span class="loader-ellips__dot"></span>
+  </div>
+  <p class="infinite-scroll-last"></p>
+  <p class="infinite-scroll-error"></p>
+</div>
+
+<script src="js/mousePlayground.js" id="sketchP5"></script>
+<div id="canvasContainer"></div>
+<script src="js/Sounds.js"></script>
+<script src="js/infinite-scroll-docs.min.js"></script>
+<script src="js/homeAnimations.js"></script>

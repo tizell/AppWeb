@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tizell</title>
+    <meta name="description" content="Historias audiovisuales">
+    <meta name="author" content="Tizell Studio">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta charset="utf-8" />
+    <!-- Activate / Deativate Debug -->
+    <script src="/js/debug.js"></script>
+    <!-- Include jQuery 3.3.1-->
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+    <!-- Include Easing -->
+    <script type="text/javascript" src="/js/easing_1_3.js"></script>
+    <!-- Include p5 -->
+    <script type="text/javascript" src="/js/p5.min.js"></script>
+    <!-- Include InfiniteScroll -->
+    <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+    <!-- Include lazylinepainter -->
+    <script src="/js/jquery.lazylinepainter-1.7.0.js"></script>
+    <!-- Include SoudMaster -->
+    <script src='https://cdn.rawgit.com/admsev/jquery-play-sound/master/jquery.playSound.js'></script>
+
+    <!-- Include AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+	<link href="/styles/site.css" rel="stylesheet">
+
+		{{!-- This file provides the default styling for the KeystoneJS Content Editor
+			- only renders when user is logged in and admin--}}
+		{{{isAdminEditorCSS user}}}
+
+		{{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+		//- Safely remove this block if you are not targeting IE8 --}}
+		<!--[if lt IE 9]>
+			<script src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js"></script>
+			<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+</head>
+
+<body>
+
+        <!--
+        Flash messages allow you to display once-off status messages to users, e.g. form
+        validation errors, success messages, etc
+    -->
+    {{#if messages}}
+    <div id="flash-messages" class="container">
+        {{#if messages.info}}
+        <div class="alert alert-info">
+                {{{flashMessages messages.info}}}
+        </div>
+        {{/if}}
+        {{#if messages.success}}
+        <div class="alert alert-success">
+                {{{flashMessages messages.success}}}
+        </div>
+        {{/if}}
+        {{#if messages.warning}}
+        <div class="alert alert-warning">
+                {{{flashMessages messages.warning}}}
+        </div>
+        {{/if}}
+        {{#if messages.error}}
+        <div class="alert alert-danger">
+                {{{flashMessages messages.error}}}
+        </div>
+        {{/if}}
+    </div>
+    {{/if}}
+
+    <div id="project-background">
+    </div>
+    <div id="menu_container">
+        <div class="menu" id="menu_top" data-aos="fade-left">
+            <h3>Open Toolkit</h3>
+            <div class="underLine"></div>
+        </div>
+        <div class="menu" id="menu_right" data-aos="fade-left">
+            <h3>Home</h3>
+            <div class="underLine"></div>
+        </div>
+        <div class="menu" id="menu_bottom" data-aos="fade-left">
+            <h3>Say hi!</h3>
+            <div class="underLine" data-aos="fade-left"></div>
+        </div>
+        <div class="menu" id="menu_left">
+            <h3>?????</h3>
+            <div class="underLine" data-aos="fade-left"></div>
+        </div>
+    </div>
+	{{{body}}}
+       <div id="about_container">
+        <div id="about_info">
+            <p>
+                Mi nombre es Lucas Ortiz, llevo cinco años trabajando para marcas, construyendo su imagen, experiencia y/o comunicación.
+                <br>
+                <br> Mi pasión es contar historias y especialmente, ayudar a otros a tener las herramientas para contar la suya propia, construyendo experiencia de marca y haciendo que sus productos, ideas y servicios comuniquen el mensaje correcto. Soy una persona inquieta y me definiría como multidisciplinar y autodidacta. He conseguido participar y comprender muchas de las areas sobre las que se trabaja a la hora de crear una marca o pieza de comunicación; Desde la dirección de arte, diseño de experiencia, la creación de contenido audiovisual, pasado por el diseño gráfico, creación de escenografías y diseño industrial, e incluso hasta interacción con nuevos medios y programación creativa para instalaciones interactivas, entre otras disciplinas.
+            </p>
+        </div>
+    </div>
+    <div id="exit"></div>
+    <!-- Tools -->
+    <div id="tools">
+        <div id="tools-container">
+            <div class="tools-infinite_div">
+                <h5 class="tools-text" id="tools-interactive">
+        <span>BRANDING – BRANDING – BRANDING – BRANDING – BRANDING – BRANDING – BRANDING  – BRANDING  – BRANDING </span>
+        </h5>
+            </div>
+            <div class="tools-infinite_div">
+                <h5 class="tools-text" id="tools-video">
+        <span>VIDEO – VIDEO – VIDEO – VIDEO – VIDEO – VIDEO – VIDEO</span>
+        </h5>
+            </div>
+            <div class="tools-infinite_div">
+                <h5 class="tools-text" id="tools-art">
+                <span>ART DIRECTION – ART DIRECTION – ART DIRECTION – ART DIRECTION – ART DIRECTION – ART DIRECTION – ART DIRECTION – ART DIRECTION – ART DIRECTION – ART DIRECTION – ART DIRECTION – ART DIRECTION – ART DIRECTION – ART DIRECTION</span>
+                </h5>
+            </div>
+            <div class="tools-infinite_div">
+                <h5 class="tools-text" id="tools-photo">
+                <span>PHOTO – PHOTO – PHOTO – PHOTO – PHOTO – PHOTO – PHOTO – PHOTO</span>
+                </h5>
+            </div>
+            <div class="tools-infinite_div">
+                <h5 class="tools-text" id="tools-design">
+                <span>DESIGN – DESIGN – DESIGN – DESIGN – DESIGN</span>
+                </h5>
+            </div>
+        </div>
+    </body>
+
+</html>
